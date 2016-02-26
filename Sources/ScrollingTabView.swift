@@ -38,12 +38,13 @@ public class ScrollingTabView: UIView {
     /// Collection view layout for the tab view.
     public var scrollingLayout: ScrollingTabViewFlowLayout!
     
-    public var tabBackgroundColor: UIColor = UIColor.whiteColor()
-    public var tabTitleColor: UIColor = UIColor.blackColor() {
+    public var tabBackgroundColor: UIColor = UIColor.whiteColor() {
         didSet {
             self.backgroundColor = tabBackgroundColor
         }
     }
+    
+    public var tabTitleColor: UIColor = UIColor.blackColor()
     
     /// Specifies the offset of the selection indicator from the bottom of the view. Defaults to 0.
     public var selectionIndicatorOffset: CGFloat = 0 {

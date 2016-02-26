@@ -39,7 +39,7 @@ public class ScrollingTabCell: UICollectionViewCell {
         }
     }
     
-    public var textColor: UIColor! = UIColor.darkGrayColor() {
+    public var textColor: UIColor! = UIColor.whiteColor() {
         didSet {
             updateTitleLabelColor()
         }
