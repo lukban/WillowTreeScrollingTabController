@@ -63,6 +63,8 @@ public class ScrollingTabCell: UICollectionViewCell {
         self.titleLabel = UILabel()
         self.titleLabel.translatesAutoresizingMaskIntoConstraints = false
         self.titleLabel.textAlignment = .Center
+        self.titleLabel.textColor = textColor
+        
         self.contentView.addSubview(self.titleLabel)
         
         let horizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("|-[view]-|",

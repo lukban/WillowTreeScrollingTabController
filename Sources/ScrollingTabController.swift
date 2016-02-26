@@ -335,6 +335,10 @@ public class ScrollingTabController: UIViewController, UIScrollViewDelegate, UIC
     public func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("TabCell", forIndexPath: indexPath) as! ScrollingTabCell
         
+        cell.backgroundColor = tabView.tabBackgroundColor
+        cell.textColor = tabView.tabTitleColor
+        cell.selectedTextColor = tabView.tabTitleColor
+
         let configuredCell = self.dataSource?.tabView(self, configureTitleCell: cell, atIndex: indexPath.item)
         
         if configuredCell == nil {
