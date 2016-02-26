@@ -33,16 +33,29 @@ public class ScrollingTabCell: UICollectionViewCell {
     /// Title label shown in the cell.
     public var titleLabel: UILabel!
     
-    public var selectedTextColor: UIColor! = UIColor.lightTextColor()
-    public var textColor: UIColor! = UIColor.darkGrayColor()
+    public var selectedTextColor: UIColor! = UIColor.lightTextColor() {
+        didSet {
+            updateTitleLabelColor()
+        }
+    }
+    
+    public var textColor: UIColor! = UIColor.darkGrayColor() {
+        didSet {
+            updateTitleLabelColor()
+        }
+    }
     
     public override var selected: Bool {
         didSet {
-            if selected {
-                self.titleLabel.textColor = selectedTextColor
-            } else {
-                self.titleLabel.textColor = textColor
-            }
+            updateTitleLabelColor()
+        }
+    }
+    
+    private func updateTitleLabelColor() {
+        if selected {
+            self.titleLabel.textColor = selectedTextColor
+        } else {
+            self.titleLabel.textColor = textColor
         }
     }
     
